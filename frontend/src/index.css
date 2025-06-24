@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+    --font-Satoshi: "Satoshi", "sans-serif";
+    --radius-primary: 122px;
+    --radius-button: 30px;
+    --radius-card: 12px;
+    --radius-form: 16px;
+    --radius-time: 10px;
+    --color-purple-start: #a128ff;
+    --color-purple-end: #6100ad;
+    --color-job-icon-start: #fefefd;
+    --color-job-icon-end: #f1f1f1;
+    --color-line: rgba(234, 234, 234, 1);
+    --color-apply-btn: #00aaff;
+    --color-publish: rgba(0, 170, 255, 1);
+    --radius-apply-btn: 10px;
+    --color-time: #b0d9ff;
+}
+
+@layer components {
+    .card {
+        box-shadow: 0px 0px 8px 3px rgba(211, 211, 211, 0.15);
+    }
+
+    .header-nav {
+        box-shadow: 0px 0px 15px 1px #7f7f7f26;
+    }
+
+    .job-filter {
+        box-shadow: 0px 10px 20px -10px #7f7f7f26;
+    }
+
+    .select-tag {
+        background: url("/src/assets/sharp_dropdown.png") no-repeat right 1rem
+            center;
+        background-size: 14px 7px;
+    }
+
+    .select-tag option {
+        padding: 1rem;
+    }
+}
