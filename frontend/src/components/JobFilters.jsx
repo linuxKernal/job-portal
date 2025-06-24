@@ -51,6 +51,7 @@ export default function JobFilters() {
                     <input
                         type="text"
                         value={searchLocation}
+                        id="location"
                         onChange={(e) =>
                             dispatch({
                                 type: "searchLocation",
@@ -62,9 +63,9 @@ export default function JobFilters() {
                     />
                 </span>
 
-                <span className="shrink-0 px-2 pr-6">
+                <label htmlFor="location" className="shrink-0 px-2 pr-6">
                     <img src={DropDownIcon} alt="dropdown icon image" />
-                </span>
+                </label>
             </span>
             <span className="grow border-r-2 border-r-line shrink-0 basis-56">
                 <span className="flex gap-4 items-center w-full">
@@ -109,7 +110,7 @@ export default function JobFilters() {
                     <RangeSlider
                         color="rgba(34, 34, 34, 1)"
                         size="xs"
-                        min={0}
+                        min={1}
                         max={200}
                         styles={{
                             thumb: { borderWidth: 6, padding: 3 },

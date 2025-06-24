@@ -18,6 +18,7 @@ const initalState = {
     searchMaxSalary: 100,
     showSuccess: false,
     isLoading: true,
+    formLoading: false,
     jobs: [],
 };
 
@@ -61,6 +62,8 @@ function reducer(state, action) {
             };
         case "updateLoading":
             return { ...state, isLoading: action.payload };
+        case "updateFormLoading":
+            return { ...state, formLoading: action.payload };
         case "clear":
             return {
                 ...initalState,

@@ -29,11 +29,11 @@ export default function JobList() {
             : true;
 
         const matchesMinSalary = searchMinSalary
-            ? item.minSalary <= searchMaxSalary
+            ? item.minSalary <= searchMaxSalary * 1000
             : true;
 
         const matchesMaxSalary = searchMaxSalary
-            ? item.maxSalary >= searchMinSalary
+            ? item.maxSalary >= searchMinSalary * 1000
             : true;
 
         return (

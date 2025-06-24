@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { Loader } from "@mantine/core";
 import UpAndDownArrowIcon from "../assets/up_down_arrow.png";
 import TwoDownArrowIcon from "../assets/down_arrow.png";
 import TwoSideArrowIcon from "../assets/side_arrow.png";
@@ -13,6 +14,10 @@ export default function Modal({ setIsModelOpen }) {
         e.preventDefault();
 
         try {
+            dispatch({
+                type: "updateFormLoading",
+                payload: true,
+            });
             const {
                 jobTitle,
                 companyName,
@@ -34,8 +39,8 @@ export default function Modal({ setIsModelOpen }) {
                     companyName,
                     location,
                     jobType,
-                    minSalary: minSalary / 1000,
-                    maxSalary: maxSalary / 1000,
+                    minSalary,
+                    maxSalary,
                     applicationDeadline,
                     description,
                 }),
@@ -50,6 +55,11 @@ export default function Modal({ setIsModelOpen }) {
             dispatch({ type: "clear" });
         } catch (error) {
             console.error(error);
+        } finally {
+            dispatch({
+                type: "updateFormLoading",
+                payload: false,
+            });
         }
     }
 
@@ -253,14 +263,19 @@ export default function Modal({ setIsModelOpen }) {
                         </button>
                         <button
                             type="submit"
-                            className="flex gap-2 text-[20px] items-center text-white bg-publish rounded-time px-[60px] py-[16px]"
+                            className="flex gap-2 text-[20px] active:text-publish border active:bg-transparent items-center text-white bg-publish rounded-time px-[60px] py-[16px]"
                         >
                             <p>Publish</p>
-                            <img
-                                src={TwoSideArrowIcon}
-                                className="h-2 w-2.5"
-                                alt=""
-                            />
+
+                            {state.formLoading ? (
+                                <Loader color="white" size="sm" />
+                            ) : (
+                                <img
+                                    src={TwoSideArrowIcon}
+                                    className="h-2 w-2.5"
+                                    alt=""
+                                />
+                            )}
                         </button>
                     </div>
                 </form>

@@ -48,7 +48,11 @@ export default function JobCard({
                             alt=""
                         />
                         <span className="flex">
-                            <p>{maxSalary}</p>LPA
+                            <p>
+                                {Math.round(((maxSalary * 12) / 100000) * 100) /
+                                    100}
+                            </p>
+                            LPA
                         </span>
                     </span>
                 </div>
