@@ -28,20 +28,18 @@ export default function JobList() {
             ? item.jobType.toLowerCase() === searchJobType.toLowerCase()
             : true;
 
-        const matchesMinSalary = searchMinSalary
-            ? item.minSalary <= searchMaxSalary * 1000
-            : true;
+        const filterMinSalary = searchMinSalary ? searchMinSalary * 1000 : 0;
 
-        const matchesMaxSalary = searchMaxSalary
-            ? item.maxSalary >= searchMinSalary * 1000
-            : true;
+        const filterMaxSalary = searchMaxSalary
+            ? searchMaxSalary * 1000
+            : Infinity;
+
+        const matchesSalary =
+            item.maxSalary >= filterMinSalary &&
+            item.minSalary <= filterMaxSalary;
 
         return (
-            matchesTitle &&
-            matchesLocation &&
-            matchesJobType &&
-            matchesMinSalary &&
-            matchesMaxSalary
+            matchesTitle && matchesLocation && matchesJobType && matchesSalary
         );
     });
 

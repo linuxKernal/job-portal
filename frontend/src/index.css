@@ -10,6 +10,7 @@
     --color-purple-start: #a128ff;
     --color-purple-end: #6100ad;
     --color-job-icon-start: #fefefd;
+    --color-light: #f5f5f5a9;
     --color-job-icon-end: #f1f1f1;
     --color-line: rgba(234, 234, 234, 1);
     --color-apply-btn: #00aaff;
@@ -31,6 +32,10 @@
         box-shadow: 0px 10px 20px -10px #7f7f7f26;
     }
 
+    .light {
+        background-color: #f5f5f5a9;
+    }
+
     .select-tag {
         background: url("/src/assets/sharp_dropdown.png") no-repeat right 1rem
             center;
@@ -39,5 +44,9 @@
 
     .select-tag option {
         padding: 1rem;
+    }
+
+    .bar {
+        scrollbar-width: thin;
     }
 }
