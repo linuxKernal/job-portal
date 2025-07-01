@@ -1,21 +1,30 @@
 import AmazonIcon from "../assets/amazon.png";
+import Swiggy from "../assets/swiggy.png";
+import Tesls from "../assets/tesla.png";
 import ExperienceIcon from "../assets/exp.png";
 import SalaryIcon from "../assets/salary.png";
 import JobSiteIcon from "../assets/site.png";
+
+const images = {
+    amazon: AmazonIcon,
+    swiggy: Swiggy,
+    tesla: Tesls,
+};
 
 export default function JobCard({
     jobTitle = "Full Stack Developer",
     jobType = "fulltime",
     maxSalary = 12,
+    companyName,
     createdAt,
     description = "",
 }) {
     return (
         <div className="w-[316px] rounded-card card px-8 py-4 flex flex-col justify-between  relative">
             <div className="space-y-3">
-                <div className="w-[83px] height-[82px]">
+                <div className="w-[83px] height-[82px] job-icon-shadow flex justify-center p-2 rounded-apply-btn">
                     <img
-                        src={AmazonIcon}
+                        src={images[companyName] || AmazonIcon}
                         className="w-[65px] h-[65px]"
                         alt=""
                     />

@@ -45,7 +45,7 @@ export default function JobList() {
 
     return (
         <div
-            className={`flex mt-16 gap-4 flex-wrap mx-16 ${
+            className={`flex my-16 gap-4 flex-wrap mx-16 ${
                 isLoading ? "justify-center items-center" : ""
             }`}
         >
@@ -58,6 +58,7 @@ export default function JobList() {
                             key={item._id}
                             jobTitle={item.jobTitle}
                             jobType={item.jobType}
+                            companyName={item.companyName}
                             description={item.description}
                             maxSalary={item.maxSalary}
                             createdAt={item.createdAt}

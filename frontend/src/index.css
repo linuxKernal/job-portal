@@ -49,4 +49,10 @@
     .bar {
         scrollbar-width: thin;
     }
+
+    .job-icon-shadow {
+        background: linear-gradient(to bottom, #fefefd, #f1f1f1);
+        border: 1px solid #ffffff;
+        box-shadow: 0px 0px 10.25px 0px rgba(148, 148, 148, 0.25);
+    }
 }
